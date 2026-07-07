@@ -7,7 +7,7 @@ dotenv.config();
 
 export const generateJWT = (userId, role) => {
   return new Promise((resolve, reject) => {
-    const payload = { userId, role };
+    const payload = { userId, sub: userId, role };
 
     jwt.sign(
       payload,
